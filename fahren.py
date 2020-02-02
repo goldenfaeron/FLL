@@ -23,10 +23,9 @@ def cmfahren2(geschwindigkeit,strecke):
       print(abs(left_motor.angle()))
       print(grad)
       if left_motor.speed() > right_motor.speed():
-         left_motor.set_run_settings(right_motor.speed(), 0)
-         wait(500)
+         left_motor.run(right_motor.speed())
+         wait(50)
       if left_motor.speed() < right_motor.speed():
-         right_motor.set_run_settings(left_motor.speed(), 0)
-         wait(500)
-   right_motor.run_target(geschwindigkeit, grad)
+         right_motor.run(left_motor.speed())
+         wait(50)
    return;
